@@ -120,6 +120,7 @@ main h1{
     gap: 1em;
     place-items: center;
     grid-auto-columns: 100%;
+    text-align: center;
 }
 .modal__title{
     font-size: 2.5rem;
