@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sansita&display=swap');
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+main{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: rgb(31, 2, 8);
+    font-family: 'Patrick Hand', cursive;    
+}
+main h1{
+    position: relative;
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 0.70em;
+    outline:none;
+    animation: animate 4s linear infinite; 
+    color:rgb(220, 20, 60) ;
+}
+@keyframes animate {
+    0%{
+        color: rgb(220, 20, 60);
+        text-shadow: none;
+    }
+    15.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
+        color: #fff;
+        text-shadow: 0 0 10px rgb(255, 20, 60),
+        0 0 20px rgb(255, 20, 60), 
+        0 0 40px rgb(255, 20, 60),
+        0 0 80px rgb(255, 20, 60),
+        0 0 160px rgb(255, 20, 60);
+
+
+    }
+}
+/*  18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%
+    
+*/
+
+.boton-neon{
+    height: 10rem;
+    width: 10rem;
+    background-color: rgb(220, 20, 60);
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 70px -10px rgb(220, 20, 60);
+    animation: heart 0.7s linear infinite;
+    cursor: pointer;
+    
+    
+}
+
+@keyframes heart {
+    0%{
+        transform: rotate(-45deg) scale(1.05 );
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.03 );
+    }
+    100%{
+        transform: rotate(-45deg) scale(1 );
+    }
+}
+
+.boton-neon::before{
+    content: ' ';
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+    background-color: rgb(220, 20, 60);
+    top:-50%;
+    border-radius: 10rem;
+    box-shadow: -10px -10px 70px -10px rgb(220, 20, 60);
+    
+}
+.boton-neon::after{
+    content: ' ';
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+    background-color: rgb(220, 20, 60);
+    right:-50%;
+    border-radius: 10rem;
+    box-shadow: 10px 10px 70px -10px rgb(220, 20, 60);
+    
+}
+
+/*modal*/
+
+.modal{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(2, 16, 24);
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+
+}
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+
+.modal__container{
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+    background: rgb(2, 16, 24);
+    border-radius: 25px;
+    max-height: 90%;
+    padding :3em, 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+}
+.modal__title{
+    font-size: 2.5rem;
+   
+    color: #fff;
+        text-shadow: 0 0 10px #FFF713,
+        0 0 20px #FFF713, 
+        0 0 40px #FFF713,
+        0 0 80px #FFF713,
+        0 0 160px #FFF713;
+}
+.modal__img{
+    width: 80%;
+}
+
+
+.modal__boton{
+    margin-top:2rem ;
+    display: flex;
+    justify-content: space-around;
+    
+    
+    width: 100%;
+
+}
+.modal__boton button{
+    --yellow: rgb(255, 247, 19);
+    font-size: 15px;
+    padding: 0.7em 2.7em;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    border-radius: 0.6em; 
+    line-height: 1.4em;
+    border: 2px solid var(--yellow);
+    background: linear-gradient(to right, rgba(255, 247, 19, 0.1) 1%, transparent 40%,transparent 60% , rgba(255, 247, 19, 0.1) 100%);
+    color: var(--yellow);
+    box-shadow: inset 0 0 10px rgba(255, 247, 19, 0.4), 0 0 9px 3px rgba(255, 247, 19, 0.1);
+    
+    
+}
+
+
+
+
+
+/*
+    background:rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-botton: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+    */
